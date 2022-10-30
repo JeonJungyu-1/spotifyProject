@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# 스포티파이 클론 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 프로젝트는 스포티파이를 참고하여 만든 클론 웹사이트 입니다.
 
-## Available Scripts
+## 주요 특징
 
 In the project directory, you can run:
 
