@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const CLIENT_ID = "90b84ea4836b42a889af2ed042e1f2d3";
-const REDIRECT_URI = "http://localhost:3000";
+const REDIRECT_URI = "http://localhost:3000/main";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
 
