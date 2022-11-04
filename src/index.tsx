@@ -5,13 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "styled-components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { theme } from "./theme"
 
 const queryClient = new QueryClient();
 
-const lightTheme = {
-  textColor: "#111",
-  backgroundColor: "whitesmoke",
-};
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -19,7 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>
     </QueryClientProvider>

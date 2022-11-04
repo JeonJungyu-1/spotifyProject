@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import LeftMenu from "../menu/LeftMenu";
 
@@ -18,7 +19,7 @@ export default function Main() {
   return (
     <MainContainer>
       <LeftMenu />
-      <div>Main</div>
+      <Outlet />
     </MainContainer>
   );
 }
