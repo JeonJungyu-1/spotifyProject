@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "styled-components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { theme } from "./theme"
+import 'antd/dist/antd.css';
 
 const queryClient = new QueryClient();
 

@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CLIENT_ID = "90b84ea4836b42a889af2ed042e1f2d3";
-const REDIRECT_URI = "http://localhost:3000/main";
+const REDIRECT_URI = "http://localhost:3000";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
 
 export default function Login() {
   const [token, setToken] = useState<string>("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const hash: string = window.location.hash;
@@ -22,7 +24,6 @@ export default function Login() {
       window.location.hash = "";
       window.localStorage.setItem("token", token);
     }
-
     setToken(token);
   }, []);
 
@@ -40,7 +41,10 @@ export default function Login() {
           Login to Spotify
         </a>
       ) : (
+        <>
         <button onClick={logout}>Logout</button>
+        <button onClick={() => navigate("main")}>main</button>
+        </>
       )}
     </div>
   );

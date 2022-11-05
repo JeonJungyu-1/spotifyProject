@@ -4,7 +4,9 @@ import styled from "styled-components";
 import LeftMenu from "../menu/LeftMenu";
 
 const MainContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 200px 10fr;
+
 `;
 
 export default function Main() {

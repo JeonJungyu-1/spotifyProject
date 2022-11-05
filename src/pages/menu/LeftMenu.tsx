@@ -5,9 +5,10 @@ import styled from "styled-components";
 const LeftMenuContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   margin: 10px;
+  /* width: 300px; */
 `;
 
 const ListContainer = styled.div`
