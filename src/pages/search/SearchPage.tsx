@@ -11,13 +11,15 @@ const StyledButton = styled(Button)`
 `;
 
 export default function SearchPage() {
+  const token = window.localStorage.getItem("token");
+
   const { data } = useQuery(["music", "genre"], async () => {
-    const response = await getAvailableGenre();
+    const response = await getAvailableGenre(token);
     const genres = response.data.genres;
     return genres;
   });
 
-  const {data: data1} = useQuery(["music", "genre2"], () => getGenreMusic());
+  const { data: data1 } = useQuery(["music", "genre2"], () => getGenreMusic(token));
 
   return (
     <Space size={[8, 16]} wrap>
