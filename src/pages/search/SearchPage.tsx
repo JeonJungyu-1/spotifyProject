@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Button, Space } from "antd";
 import { getAvailableGenre, getGenreMusic } from "../../api/api";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const StyledButton = styled(Button)`
   width: 100px;
@@ -11,6 +12,7 @@ const StyledButton = styled(Button)`
 `;
 
 export default function SearchPage() {
+  const navigate = useNavigate();
   const token = window.localStorage.getItem("token");
 
   const { data } = useQuery(["music", "genre"], async () => {
@@ -19,12 +21,10 @@ export default function SearchPage() {
     return genres;
   });
 
-  const { data: data1 } = useQuery(["music", "genre2"], () => getGenreMusic(token));
-
   return (
     <Space size={[8, 16]} wrap>
       {data?.map((el, index) => (
-        <StyledButton key={index}>{el}</StyledButton>
+        <StyledButton key={index} onClick={() => navigate(`./${el}`)}>{el}</StyledButton>
       ))}
     </Space>
   );

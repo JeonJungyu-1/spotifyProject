@@ -10,8 +10,8 @@ export function getAvailableGenre(token : string) {
     })
 }
 
-export function getGenreMusic(token : string) {
-    return axios.get(`https://api.spotify.com/v1/search?q=genre:anime&type=album&include_external=audio`, {
+export function getGenreMusic(token : string, genre: string) {
+    return axios.get(`https://api.spotify.com/v1/search?q=genre:hip%20hop&type=track`, {
         headers : {
             Authorization: `Bearer ${token}`
         }
